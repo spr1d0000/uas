@@ -5,6 +5,7 @@ import { ArrowRightIcon, LockClosedIcon, Bars3Icon, XMarkIcon } from "@heroicons
 import Link from "next/link";
 import Image from "next/image";
 import PopupNo from "@/app/popup-no"; // Pastikan path sesuai dengan lokasi file
+import { Button } from "./ui/button";
 
 export default function Page() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -16,9 +17,9 @@ export default function Page() {
       <div className="fixed top-0 left-0 w-full z-50">
         <div style={{ backgroundColor: "rgb(10,97,96)" }} className="flex items-center justify-between px-6 md:px-12 py-4">
         <Image src="/logo/logo.PNG" width={100} height={70} className="w-20 md:w-20 lg:w-20 h-auto transition-all duration-300" alt="logo" />
-          <button className="md:hidden text-white" onClick={() => setMenuOpen(true)}>
+          <Button className="md:hidden text-white" onClick={() => setMenuOpen(true)}>
             <Bars3Icon className="w-7 h-7" />
-          </button>
+          </Button>
           <div className="hidden md:flex items-center gap-4">
             <Link href="/login" className="flex items-center gap-2 text-white text-sm md:text-base font-medium transition hover:text-gray-300">
               <LockClosedIcon className="w-5 h-5" />
@@ -39,9 +40,9 @@ export default function Page() {
           <Image src="/logo/logo.png" width={120} height={80} alt="Sidebar Logo" />
         </div>
         <div className="absolute top-4 right-4">
-          <button className="text-white" onClick={() => setMenuOpen(false)}>
+          <Button className="text-white" onClick={() => setMenuOpen(false)}>
             <XMarkIcon className="w-7 h-7" />
-          </button>
+          </Button>
         </div>
         <div className="mt-auto flex flex-col items-center gap-4 pb-10">
             {/*          <Link href="/register" className="w-4/5 text-center py-2 bg-[rgb(10,97,96)] text-white rounded-md">
